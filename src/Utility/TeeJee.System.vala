@@ -353,7 +353,7 @@ namespace TeeJee.System{
 			string cmd = "xdg-open '%s'".printf(escape_single_quote(file));
 			
 			if (user.length > 0){
-				cmd = "pkexec --user %s env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY ".printf(user) + cmd;
+				cmd = "pkexec --user %s env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY PATH=$PATH ".printf(user) + cmd;
 			}
 			
 			log_debug(cmd);
@@ -382,7 +382,7 @@ namespace TeeJee.System{
 			
 		string cmd = "";
 		if (run_as_admin){
-			cmd += "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY ";
+			cmd += "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY PATH=$PATH ";
 		}
 
 		string term = terminal_emulator;

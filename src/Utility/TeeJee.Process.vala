@@ -90,7 +90,7 @@ namespace TeeJee.ProcessHelper{
 		if (run_as_admin){
 			
 			var script_admin = "#!/bin/bash\n";
-			script_admin += "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY";
+			script_admin += "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY PATH=$PATH ";
 			script_admin += " '%s'".printf(escape_single_quote(sh_file));
 			
 			sh_file_admin = GLib.Path.build_filename(file_parent(sh_file),"script-admin.sh");

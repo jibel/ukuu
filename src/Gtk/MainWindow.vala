@@ -396,7 +396,7 @@ public class MainWindow : Gtk.Window{
 				});
 
 				string sh = "";
-				sh += "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "; 
+				sh += "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY PATH=$PATH ";
 				sh += "ukuu --user %s".printf(App.user_login);
 				if (LOG_DEBUG){
 					sh += " --debug";
@@ -442,7 +442,7 @@ public class MainWindow : Gtk.Window{
 			});
 
 			string sh = "";
-			sh += "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "; 
+			sh += "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY PATH=$PATH ";
 			sh += "ukuu --user %s".printf(App.user_login);
 			if (LOG_DEBUG){
 				sh += " --debug";
@@ -717,7 +717,7 @@ public class MainWindow : Gtk.Window{
 		});
 
 		string sh = "";
-		sh += "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY ";
+		sh += "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY PATH=$PATH ";
 		sh += "ukuu --user %s".printf(App.user_login);
 		if (LOG_DEBUG){
 			sh += " --debug";
